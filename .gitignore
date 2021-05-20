@@ -1,5 +1,5 @@
 .idea/
 venv/
 __pycache__/
-punishman.key
-punishman.key.pub
+key_sql
+key_sql.pub
