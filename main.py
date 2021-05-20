@@ -25,7 +25,7 @@ def read_phones():
     all_phones = ""
     phone_list = cur.fetchall()
     for phone in phone_list:
-        all_phones += str(phone) + '<br>'
+        all_phones += "+" + str(phone) + '<br>'
     con.close()
     all_phones = re.sub('[()\',]', '', all_phones)
     return Response(all_phones)
@@ -42,7 +42,7 @@ def update_phones():
     cur.execute(sql)
     con.commit()
     con.close()
-    return "Old phone(s) updated"
+    return "Old phone(s) were updated"
 
 @app.route('/deleteall')
 def deleteall_phones():
@@ -53,7 +53,7 @@ def deleteall_phones():
     cur.execute(sql)
     con.commit()
     con.close()
-    return "All phones are deleted"
+    return "All phones were deleted"
 
 @app.route('/deletesingle')
 def deletesingle_phones():
